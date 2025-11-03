@@ -20,7 +20,6 @@ public class GestorWidget extends JDialog {
         setAlwaysOnTop(true);
         setUndecorated(true);
         setBackground(new Color(0, 0, 0, 0));
-
         setVisible(true);
     }
 }
