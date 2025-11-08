@@ -6,7 +6,7 @@
 
     <groupId>me.t4c30</groupId>
     <artifactId>joverlay</artifactId>
-    <version>1.0</version>
+    <version>1.0.0.1</version>
 
 
     <properties>
@@ -84,29 +84,6 @@
                 <artifactId>jpackage-maven-plugin</artifactId>
                 <version>1.7.1</version>
                 <executions>
-                    <execution>
-                    <id>linux</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>jpackage</goal>
-                    </goals>
-                    <configuration>
-                        <name>JOverlay</name>
-                        <appVersion>${project.version}</appVersion>
-                        <vendor>T4C30</vendor>
-
-                        <mainJar>${project.build.finalName}-jar-with-dependencies.jar</mainJar>
-                        <mainClass>me.t4c30.Main</mainClass>
-                        <icon>src\main\resources\Logo_64.ico</icon> 
-                        <runtimeImage>${project.build.directory}/jlink-runtime</runtimeImage>
-                        <input>${project.build.directory}</input>
-                        <type>APP_IMAGE</type> 
-                        <linuxPackageName>miaplicacionjava</linuxPackageName>
-                        <linuxMenuGroup>Aplicaciones</linuxMenuGroup>
-                        <destination>${project.build.directory}/linux</destination>
-                        
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>win</id>
                         <phase>package</phase>

@@ -13,12 +13,12 @@ import oshi.hardware.PowerSource;
 /**
  * Widget de texto de la bateria disponible/restante
  * @author T4C30
- * @version 1.0
+ * @version 1.0.0.1
  */
 public class Bateria extends JLabel{
 
     private PowerSource ps;
-    private final Timer temporizador;
+    private Timer temporizador;
 
     /**
      * Constructor por defecto.
@@ -26,6 +26,9 @@ public class Bateria extends JLabel{
      * Bateria que se actualiza los campos al segundo
      */
     public Bateria() {
+        if (informacionSistema()==null) {
+            return;
+        }
         temporizador = new Timer(1000, (ActionEvent e) -> {
             setText("| Bateria: "+getBateria()+ "%, quedan " + getTiempo() + " min");
         });
@@ -59,11 +62,15 @@ public class Bateria extends JLabel{
 
     /**
      * Obtienes la informacion del sistema de la bateria para ser manejada en la clase
-     * @return el objeto bateria con su informacion
+     * @return el objeto bateria con su informacion o nulo si esta vacio
      */
     private PowerSource informacionSistema(){
         SystemInfo si = new SystemInfo();
         HardwareAbstractionLayer hal = si.getHardware();
+        // TODO: Mejorar lógica
+        if (hal.getPowerSources().isEmpty()) {
+            return null;
+        }
         return hal.getPowerSources().get(0);
     }
 
