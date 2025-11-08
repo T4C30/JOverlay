@@ -85,7 +85,7 @@
                 <version>1.7.1</version>
                 <executions>
                     <execution>
-                        <id>win</id>
+                        <id>win-msi</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jpackage</goal>
@@ -103,6 +103,52 @@
                             
                             <type>MSI</type>
                             <winMenu>true</winMenu>
+                            <icon>src\main\resources\Logo_64.ico</icon>
+                            <input>${project.build.directory}</input>
+                            <destination>${project.build.directory}/win_msi</destination>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>win-exe</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jpackage</goal>
+                        </goals>
+                        <configuration>
+                            <name>JOverlay</name>
+                            <description>JOverlay</description>
+                            <appVersion>${project.version}</appVersion>
+                            <vendor>T4C30</vendor>
+                            <copyright>Apache 2.0</copyright>
+
+                            <runtimeImage>${project.build.directory}/jlink-runtime</runtimeImage>
+                            <mainJar>${project.build.finalName}-jar-with-dependencies.jar</mainJar>
+                            <mainClass>me.t4c30.Main</mainClass>
+                            
+                            <type>EXE</type>
+                            <winMenu>true</winMenu>
+                            <icon>src\main\resources\Logo_64.ico</icon>
+                            <input>${project.build.directory}</input>
+                            <destination>${project.build.directory}/win_exe</destination>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>win</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jpackage</goal>
+                        </goals>
+                        <configuration>
+                            <name>JOverlay</name>
+                            <description>JOverlay</description>
+                            <appVersion>${project.version}</appVersion>
+                            <vendor>T4C30</vendor>
+                            <copyright>Apache 2.0</copyright>
+
+                            <runtimeImage>${project.build.directory}/jlink-runtime</runtimeImage>
+                            <mainJar>${project.build.finalName}-jar-with-dependencies.jar</mainJar>
+                            <mainClass>me.t4c30.Main</mainClass>
+                            
                             <icon>src\main\resources\Logo_64.ico</icon>
                             <input>${project.build.directory}</input>
                             <destination>${project.build.directory}/win</destination>

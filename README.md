@@ -14,10 +14,4 @@ EXE Portable:
 
 - El Ejecutable directamente en el lugar deseado.
 
-**Si se desea que se ejecute al iniciar tu dispositivo añada un acceso directo a C:\Users\TU_USUARIO\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup**
-
-### Linux
-
-App Image portable:
-
-- El Ejecutable directamente en el lugar deseado.
+**Si se desea que se ejecute al iniciar tu dispositivo añada un acceso directo a C:\Users\TU_USUARIO\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup**s
