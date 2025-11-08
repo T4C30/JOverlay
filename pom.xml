@@ -149,6 +149,7 @@
                             <mainJar>${project.build.finalName}-jar-with-dependencies.jar</mainJar>
                             <mainClass>me.t4c30.Main</mainClass>
                             
+                            <type>APP_IMAGE</type>
                             <icon>src\main\resources\Logo_64.ico</icon>
                             <input>${project.build.directory}</input>
                             <destination>${project.build.directory}/win</destination>
